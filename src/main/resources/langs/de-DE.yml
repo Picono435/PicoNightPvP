@@ -7,7 +7,7 @@
 ##
 #################################################################################
 #In this category you can change the general messages of the plugin
-became-night: "&8Careful! Now the plots world is at night so you can get killed!"
-became-day: "&eYupii! Now the plots world is at day so you can't get killed!"
-pvp-disabled: "&cHey! The PvP is disabled."
-command-blocked: "&cThis command is blocked in this part of the time cycle."
+became-night: "&8Vorsicht! Jetzt ist die Welt der Grundstücke in der Nacht, damit du getötet werden kannst!"
+became-day: "&8Vorsicht! Jetzt ist die Welt der Grundstücke in der Nacht, damit du getötet werden kannst!"
+pvp-disabled: "&cHey! Der PvP ist deaktiviert."
+command-blocked: "&cDieser Befehl ist in diesem Teil des Zeitzyklus blockiert."
