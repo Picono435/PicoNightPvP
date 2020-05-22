@@ -1,0 +1,35 @@
+# IMPORTANT #
+# Some configurations have the ** PREMIUM ONLY ** tag, this means that the configurations are only for the premium version.
+# IMPORTANT #
+
+#################################################################################
+#                                                                               #
+# Important configurations                                                      #
+#                                                                               #
+#################################################################################
+# In this category there is a lot of important configurations that should be read and changed with your necessities
+# Put here the language that you want to use! The following languages are the ones that can be used:
+# en-GB - English language
+# pt-PT - Portuguese language
+lang: "en-GB"
+
+#################################################################################
+#                                                                               #
+# Misc configurations                                                           #
+#                                                                               #
+#################################################################################
+# Put here all the worlds that the pvp should be controlled by this plugin
+pvp-worlds:
+  - "PlotsWorld"
+# Commands that will get blocked when is night ** PREMIUM ONLY **
+block-commands-night:
+  - "fly"
+# Commands that will get blocked when is day ** PREMIUM ONLY **
+block-commands-day:
+  - "kill"
+# Commands that will run when it turns night ** PREMIUM ONLY **
+commands-night:
+  - "tm abc &cThe PvP is now on"
+# Commands that will run when it turns day ** PREMIUM ONLY **
+commands-day:
+  - "tm abc &aThe PvP is now off"
