@@ -9,5 +9,5 @@
 #In this category you can change the general messages of the plugin
 became-night: "&8Cuidado! Ahora el mundo de las parcelas está por la noche para que te maten!"
 became-day: "&8Cuidado! Ahora el mundo de las parcelas está por la noche para que te maten!"
-pvp-disabled: "&cHey! The PvP is disabled."
-command-blocked: "&cThis command is blocked in this part of the time cycle."
+pvp-disabled: "&cHey! El PvP esta deshabilitado."
+command-blocked: "&cEste comando esta bloqueado en esta parte del ciclo de tiempo."
