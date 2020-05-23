@@ -1,0 +1,13 @@
+---
+#This file is the en-GB language file, here you can change all the messages for this language
+#Remember that some messages may not be used because they are PREMIUM ONLY
+#################################################################################
+##
+#General messages                                                              #
+##
+#################################################################################
+#In this category you can change the general messages of the plugin
+became-night: "&8Cuidado! Ahora el mundo de las parcelas está por la noche para que te maten!"
+became-day: "&8Cuidado! Ahora el mundo de las parcelas está por la noche para que te maten!"
+pvp-disabled: "&cHey! El PvP esta deshabilitado."
+command-blocked: "&cEste comando esta bloqueado en esta parte del ciclo de tiempo."
