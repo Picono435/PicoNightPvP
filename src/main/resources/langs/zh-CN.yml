@@ -7,7 +7,7 @@
 ##
 #################################################################################
 #In this category you can change the general messages of the plugin
-became-night: "&8Careful! Now the plots world is at night so you can get killed!"
-became-day: "&eYupii! Now the plots world is at day so you can't get killed!"
-pvp-disabled: "&cHey! The PvP is disabled."
-command-blocked: "&cThis command is blocked in this part of the time cycle."
+became-night: "&8注意！现在，阴谋世界正在夜晚，你可以被杀死！"
+became-day: "&eYupii！现在，绘图世界是白天的，因此你不能被杀死！"
+pvp-disabled: "&chhe! PvP已禁用。"
+command-blocked: "&c此命令在时间周期的这一部分被屏蔽。"
