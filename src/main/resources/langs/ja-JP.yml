@@ -9,5 +9,5 @@
 #In this category you can change the general messages of the plugin
 became-night: "&8気をつけて！今夜はプロットの世界があるので、殺されることができます！"
 became-day: "&8気をつけて！今夜はプロットの世界があるので、殺されることができます！"
-pvp-disabled: "&cHey! The PvP is disabled."
+pvp-disabled: "&cHey! PvPは無効です。"
 command-blocked: "&cこのコマンドはタイムサイクルのこの部分でブロックされています。"
