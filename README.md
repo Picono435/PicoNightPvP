@@ -18,4 +18,4 @@ If you want to see how the plugin is made you can check our source code on our [
 
 **Premium Version**
 
-The free version is not bad at all but you will love the Premium Version! The Premium Version of the plugin add a lot of features that you can't find in the Free Version. But how to buy it? Well it's very easy just send me a message on DM that I will help you ;).
+The free version is not bad at all but you will love the Premium Version! The Premium Version of the plugin add a lot of features that you can't find in the Free Version. But how to buy it? Well it's very easy just go to our website and you will make everything automatic, remember that our site is still in devolpment so maybe you will not be able to buy the plugin.
