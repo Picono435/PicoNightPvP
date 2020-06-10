@@ -11,6 +11,7 @@ Want help? Check our wiki first: Click [here](https://github.com/Picono435/PicoN
 Don't forget to help us translating the plugin to other languages! Go to our [crowdin](https://crowdin.com/project/piconightpvp) to help us.
 
 It's time to download the plugin! Here are all the official links where you can download our plugin:
+ - [PiconoDev (us)](https://www.piconodev.tk/plugins/free)links
  - [SpigotMC](https://www.spigotmc.org/resources/piconightpvp-free.79135/)
  - [BukkitDEV](https://dev.bukkit.org/projects/piconightpvp-free)
 
