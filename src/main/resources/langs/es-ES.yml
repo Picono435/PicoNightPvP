@@ -11,3 +11,4 @@ became-night: "&8Cuidado! Ahora el mundo de las parcelas está por la noche para
 became-day: "&8Cuidado! Ahora el mundo de las parcelas está por la noche para que te maten!"
 pvp-disabled: "&cHey! El PvP esta deshabilitado."
 command-blocked: "&cEste comando esta bloqueado en esta parte del ciclo de tiempo."
+teleport-blocked: "&cNo puedes teletransportarte en esta parte del ciclo de tiempo."
