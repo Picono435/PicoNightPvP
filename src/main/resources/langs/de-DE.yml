@@ -11,3 +11,4 @@ became-night: "&8Vorsicht! Jetzt ist die Welt der Grundstücke in der Nacht, dam
 became-day: "&8Vorsicht! Jetzt ist die Welt der Grundstücke in der Nacht, damit du getötet werden kannst!"
 pvp-disabled: "&cHey! Der PvP ist deaktiviert."
 command-blocked: "&cDieser Befehl ist in diesem Teil des Zeitzyklus blockiert."
+teleport-blocked: "&cDu kannst dich in diesem Teil des Zeitzyklus nicht teleportieren."
