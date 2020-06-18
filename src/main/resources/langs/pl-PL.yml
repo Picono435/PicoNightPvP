@@ -11,3 +11,4 @@ became-night: "&8Ostrożnie! Świat wykresów jest w nocy, więc możesz zostać
 became-day: "&eAmori! Świat działek jest w ciągu dnia, więc nie możesz zostać zabity!"
 pvp-disabled: "&cHej! PvP jest wyłączone."
 command-blocked: "&cTa komenda jest zablokowana w tej części cyklu czasu."
+teleport-blocked: "&cNie możesz teleportować się w tej części cyklu czasu."
