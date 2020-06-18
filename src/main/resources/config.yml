@@ -1,6 +1,13 @@
-# IMPORTANT #
+# FREE VERSION, BUY PREMIUM NOW!
+# PLUGIN VERSION: v1.1
+# FREE VERSION, BUY PREMIUM NOW!
+#
+# Our wiki is avaiable in: https://github.com/Picono435/PicoNightPvP
+# Software License is avaiable in LICENSE.TXT or on our github page (https://github.com/Picono435/PicoNightPvP)
+#
 # Some configurations have the ** PREMIUM ONLY ** tag, this means that the configurations are only for the premium version.
-# IMPORTANT #
+# Buy the premium version of the plugin in: https://www.piconodev.tk/plugins/premium
+
 
 #################################################################################
 #                                                                               #
@@ -9,8 +16,8 @@
 #################################################################################
 # In this category there is a lot of important configurations that should be read and changed with your necessities
 # Put here the language that you want to use! The following languages are the ones that can be used:
-# en-GB - English language
-# pt-PT - Portuguese language
+# A list of all the possible languages can be found here: https://github.com/Picono435/PicoNightPvP/tree/master/src/main/resources/langs
+# The translations can be INCORRECT or INCOMPLETE as they are made by the community, but you can always change them.
 lang: "en-GB"
 
 #################################################################################
@@ -21,6 +28,8 @@ lang: "en-GB"
 # Put here all the worlds that the pvp should be controlled by this plugin
 pvp-worlds:
   - "PlotsWorld"
+# If the pvp should be blocked at day or night
+block-pvp-night: false
 # Commands that will get blocked when is night ** PREMIUM ONLY **
 block-commands-night:
   - "fly"
@@ -33,3 +42,7 @@ commands-night:
 # Commands that will run when it turns day ** PREMIUM ONLY **
 commands-day:
   - "tm abc &aThe PvP is now off"
+# If you allow people teleport at night ** PREMIUM ONLY **
+allow-teleport-night: true
+# If you allow people teleport at day ** PREMIUM ONLY **
+allow-teleport-day: true
