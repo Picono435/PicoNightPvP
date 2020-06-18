@@ -14,7 +14,7 @@ It's time to download the plugin! Here are all the official links where you can 
  - [PiconoDev (us)](https://www.piconodev.tk/plugins/free)
  - [SpigotMC](https://www.spigotmc.org/resources/piconightpvp-free.79135/)
  - [BukkitDEV](https://dev.bukkit.org/projects/piconightpvp-free)
-
+ - [And here, in GitHub](https://github.com/Picono435/PicoNightPvP/releases)
 If you want to see how the plugin is made you can check our source code on our [github](https://github.com/Picono435/PicoNightPvP) page.
 
 **Premium Version**
