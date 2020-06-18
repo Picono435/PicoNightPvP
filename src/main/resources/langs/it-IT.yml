@@ -11,3 +11,4 @@ became-night: "&8Attenzione! Ora il mondo delle trame è di notte in modo da pot
 became-day: "&eYupii! Ora il mondo delle trame è di giorno quindi non puoi essere ucciso!"
 pvp-disabled: "&cHey! Il PvP è disabilitato."
 command-blocked: "&cQuesto comando è bloccato in questa parte del ciclo temporale."
+teleport-blocked: "&cNon puoi teletrasportarti in questa parte del ciclo temporale."
