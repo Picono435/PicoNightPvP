@@ -19,10 +19,12 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		plugin = this;
 		saveDefaultConfig();
 		sendConsoleMessage("[PicoNightPvP] Plugin created by: Picono435#2011. Thank you for use it.");
-		if(verificarLicenca());
+		if(!verificarLicenca()) return;
+		sendConsoleMessage(ChatColor.AQUA + "[PicoNightPvP] Creating and configurating the language file selected...");
 		LanguageManager.createLanguageFile();
 		
 		//FAZENDO TIMER PARA EVENTO
+		sendConsoleMessage(ChatColor.AQUA + "[PicoNightPvP] Finishing enabling the plugin...");
 		new BukkitRunnable() {
 			@Override
 			public void run() {
@@ -43,6 +45,11 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		
 		//REGISTRANDO EVENTOS
 		Bukkit.getPluginManager().registerEvents(new PluginListeners(), this);
+		sendConsoleMessage(ChatColor.GREEN + "[PicoNightPvP] The plugin was succefully enabled.");
+	}
+	
+	public void onDisable() {
+		sendConsoleMessage(ChatColor.GREEN + "[PicoNightPvP] The plugin was succefully disabled.");
 	}
 	
 	private static boolean isDay(String worldname) {
@@ -69,8 +76,8 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 	
 	private boolean verificarLicenca() {
 		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] You are using the FREE version of the plugin!");
-		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Want to buy the premium version? Call me on discord!");
-		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] My discord is: Picono435#2011");
+		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Want to buy the premium version? Buy it in our site.");
+		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Our site is: https://piconodev.tk");
 		return true;
 	}
 }
