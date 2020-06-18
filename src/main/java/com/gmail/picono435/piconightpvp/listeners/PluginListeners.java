@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 import com.gmail.picono435.piconightpvp.PicoNightPvPPlugin;
 import com.gmail.picono435.piconightpvp.api.PicoNightPvPAPI;
@@ -36,7 +37,13 @@ public class PluginListeners implements Listener {
 	public void onTryKill(EntityDamageByEntityEvent e) {
 		if(!(e.getEntity() instanceof Player)) return;
 		if(!(e.getDamager() instanceof Player)) return;
-		if(!PicoNightPvPAPI.isNight()) {
+		if(PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && !PicoNightPvPAPI.isNight()) {
+			Player p = (Player) e.getDamager();
+			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
+			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
+			e.setCancelled(true);
+		}
+		if(!PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && PicoNightPvPAPI.isNight()) {
 			Player p = (Player) e.getDamager();
 			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
 			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
@@ -47,7 +54,14 @@ public class PluginListeners implements Listener {
 	@EventHandler()
 	public void onTryDamage(EntityDamageEvent e) {
 		if(!(e.getEntity() instanceof Player)) return;
-		if(!PicoNightPvPAPI.isNight()) {
+		if(e.getCause() == DamageCause.ENTITY_ATTACK) return;
+		if(PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && !PicoNightPvPAPI.isNight()) {
+			Player p = (Player) e.getEntity();
+			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
+			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
+			e.setCancelled(true);
+		}
+		if(!PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && PicoNightPvPAPI.isNight()) {
 			Player p = (Player) e.getEntity();
 			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
 			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
