@@ -11,3 +11,4 @@ became-night: "&8気をつけて！今夜はプロットの世界があるので
 became-day: "&8気をつけて！今夜はプロットの世界があるので、殺されることができます！"
 pvp-disabled: "&cHey! PvPは無効です。"
 command-blocked: "&cこのコマンドはタイムサイクルのこの部分でブロックされています。"
+teleport-blocked: "&cこの時間帯にはテレポートできません。"
