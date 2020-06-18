@@ -11,3 +11,4 @@ became-night: "&8Attention ! Maintenant le monde des parcelles est à la nuit po
 became-day: "&eYupii! Maintenant le monde des parcelles est au jour pour que vous ne puissiez pas être tué!"
 pvp-disabled: "&cHé ! Le PvP est désactivé."
 command-blocked: "&cCette commande est bloquée dans cette partie du cycle de temps."
+teleport-blocked: "&cVous ne pouvez pas vous téléporter dans cette partie du cycle de temps."
