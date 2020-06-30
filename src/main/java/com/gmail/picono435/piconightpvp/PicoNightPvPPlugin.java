@@ -1,5 +1,6 @@
 package com.gmail.picono435.piconightpvp;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
@@ -22,6 +23,10 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		if(!verificarLicenca()) return;
 		sendConsoleMessage(ChatColor.AQUA + "[PicoNightPvP] Creating and configurating the language file selected...");
 		LanguageManager.createLanguageFile();
+		
+		int pluginId = 8043;
+        Metrics metrics = new Metrics(this, pluginId);
+        metrics.addCustomChart(new Metrics.SimplePie("premium_version", () -> "Free"));
 		
 		//FAZENDO TIMER PARA EVENTO
 		sendConsoleMessage(ChatColor.AQUA + "[PicoNightPvP] Finishing enabling the plugin...");
@@ -77,7 +82,7 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 	private boolean verificarLicenca() {
 		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] You are using the FREE version of the plugin!");
 		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Want to buy the premium version? Buy it in our site.");
-		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Our site is: https://piconodev.tk");
+		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Our site is: https://piconodev.tk/plugins/premium");
 		return true;
 	}
 }

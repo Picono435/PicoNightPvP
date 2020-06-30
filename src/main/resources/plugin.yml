@@ -1,4 +1,4 @@
 name: PicoNightPvP-Free
 author: [Picono435]
-version: 1.0
+version: ${project.version}
 main: com.gmail.picono435.piconightpvp.PicoNightPvPPlugin
