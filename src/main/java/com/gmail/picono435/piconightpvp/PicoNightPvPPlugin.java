@@ -1,16 +1,24 @@
 package com.gmail.picono435.piconightpvp;
 
-import org.bstats.bukkit.Metrics;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import com.gmail.picono435.piconightpvp.api.PicoNightPvPAPI;
 import com.gmail.picono435.piconightpvp.events.TimeChangedWorldEvent;
 import com.gmail.picono435.piconightpvp.listeners.PluginListeners;
 import com.gmail.picono435.piconightpvp.managers.LanguageManager;
+import com.gmail.picono435.piconightpvp.utils.Metrics;
 
 public class PicoNightPvPPlugin extends JavaPlugin {
 	
@@ -51,6 +59,8 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		//REGISTRANDO EVENTOS
 		Bukkit.getPluginManager().registerEvents(new PluginListeners(), this);
 		sendConsoleMessage(ChatColor.GREEN + "[PicoNightPvP] The plugin was succefully enabled.");
+		
+		checkVersion();
 	}
 	
 	public void onDisable() {
@@ -84,5 +94,56 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Want to buy the premium version? Buy it in our site.");
 		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Our site is: https://piconodev.tk/plugins/premium");
 		return true;
+	}
+	
+	private void checkVersion() {
+		String version = "1.0";
+		try {
+            URL url = new URL("https://api.github.com/repos/Picono435/PicoNightPvP/releases/latest");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            con.setConnectTimeout(5000);
+            con.setReadTimeout(5000);
+            con.setInstanceFollowRedirects(false);
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+
+            JSONParser parser = new JSONParser();
+            JSONObject json = (JSONObject) parser.parse(content.toString());
+            
+            version = (String)json.get("tag_name");
+			
+		} catch(Exception ex) {
+			sendConsoleMessage(ChatColor.DARK_RED + "[PicoNightPvP] Could not get the lastest version.");
+			return;
+		}
+		try {
+			DefaultArtifactVersion pluginVesion = new DefaultArtifactVersion(getPlugin().getDescription().getVersion());
+			DefaultArtifactVersion lastestVersion = new DefaultArtifactVersion(version);
+			if(lastestVersion.compareTo(pluginVesion) > 0) {
+				new BukkitRunnable() {
+					public void run() {
+						sendConsoleMessage(ChatColor.DARK_RED + "[PicoNightPvP] You are using a old version of the plugin. Please download the new version in our pages.");
+						return;
+					}
+				}.runTaskLater(this, 5L);
+			} else {
+				new BukkitRunnable() {
+					public void run() {
+						sendConsoleMessage(ChatColor.GREEN + "[PicoNightPvP] You are using the lastest version of the plugin.");
+						return;
+					}
+				}.runTaskLater(this, 5L);
+			}
+		} catch (Exception e) {
+			sendConsoleMessage(ChatColor.DARK_RED + "[PicoNightPvP] Could not get the lastest version.");
+			return;
+		}
 	}
 }

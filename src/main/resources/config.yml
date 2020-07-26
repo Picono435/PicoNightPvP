@@ -27,7 +27,7 @@ lang: "en-GB"
 #################################################################################
 # Put here all the worlds that the pvp should be controlled by this plugin
 pvp-worlds:
-  - "PlotsWorld"
+  - "world"
 # If the pvp should be blocked at day or night
 block-pvp-night: false
 # Commands that will get blocked when is night ** PREMIUM ONLY **
