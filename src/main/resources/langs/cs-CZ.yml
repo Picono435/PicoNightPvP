@@ -13,9 +13,9 @@ pvp-disabled: "&cHej! PvP je zakázán."
 command-blocked: "&cTento příkaz je blokován v této části časového cyklu."
 teleport-blocked: "&cNelze teleportovat v této části časového cyklu."
 help-command: |-
-  &eUnknow command syntax
+  &eNeznámá syntaxe příkazu
 
-  &e/nightpvp enable &6- &eForce the PvP to enable
-  &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+  &e/nightpvp zapnout &6- &eVynutit zapnutí PvP
+  &e/nightpvp vypnutí &6- &eVynutit vypnutí PvP
+forced-enable-command: "&ePvP byl vynucen k aktivaci uživatelem %player_name%."
+forced-disable-command: "&8PvP byl donucen k vypnutí uživatelem %player_name%."
