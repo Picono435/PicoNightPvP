@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.gmail.picono435.piconightpvp.api.PicoNightPvPAPI;
+import com.gmail.picono435.piconightpvp.commands.NightPvPCommand;
 import com.gmail.picono435.piconightpvp.events.TimeChangedWorldEvent;
 import com.gmail.picono435.piconightpvp.listeners.PluginListeners;
 import com.gmail.picono435.piconightpvp.managers.LanguageManager;
@@ -58,6 +59,7 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		
 		//REGISTRANDO EVENTOS
 		Bukkit.getPluginManager().registerEvents(new PluginListeners(), this);
+		this.getCommand("nightpvp").setExecutor(new NightPvPCommand());
 		sendConsoleMessage(ChatColor.GREEN + "[PicoNightPvP] The plugin was succefully enabled.");
 		
 		checkVersion();
