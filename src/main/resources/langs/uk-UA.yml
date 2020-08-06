@@ -12,3 +12,10 @@ became-day: "&eYupi! Тепер світ сюжетів вже зараз, то�
 pvp-disabled: "&cХей! PvP вимкнено."
 command-blocked: "&cЦя команда заблокована в цій частині циклу часу."
 teleport-blocked: "&cВи не можете телепортуватися в цій частині циклу часу."
+help-command: |-
+  &eUnknow command syntax
+
+  &e/nightpvp enable &6- &eForce the PvP to enable
+  &e/nightpvp disable &6- &eForce the PvP to disable
+forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
+forced-disable-command: "&8The PvP was forced to disable by %player_name%."

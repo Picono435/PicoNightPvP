@@ -12,3 +12,10 @@ became-day: "&eYupi! الآن عالم المؤامرات في اليوم حتى
 pvp-disabled: "&cHey! PvP معطل."
 command-blocked: "&cهذا الأمر محظور في هذا الجزء من الدورة الزمنية."
 teleport-blocked: "&cلا يمكنك الانتقال في هذا الجزء من الدورة الزمنية."
+help-command: |-
+  &eUnknow command syntax
+
+  &e/nightpvp enable &6- &eForce the PvP to enable
+  &e/nightpvp disable &6- &eForce the PvP to disable
+forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
+forced-disable-command: "&8The PvP was forced to disable by %player_name%."

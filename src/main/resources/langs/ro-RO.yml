@@ -12,3 +12,10 @@ became-day: "&eYupii! Acum lumea comploturilor este in ziua de zi ca sa nu te po
 pvp-disabled: "&fHei! PvP este dezactivat."
 command-blocked: "&cAceasta comanda este blocata in aceasta parte a ciclului temporal."
 teleport-blocked: "&cNu te poti teleporta in aceasta parte a ciclului temporal."
+help-command: |-
+  &eSintaxa de comanda
+
+  &e/nightpvp activeaza &6- forteaza PvP sa activeze
+  &e/nightpvp dezactiveaza &6- &eForteaza PvP sa dezactiveze
+forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
+forced-disable-command: "&8The PvP was forced to disable by %player_name%."
