@@ -12,3 +12,10 @@ became-day: "&eYupii！现在，绘图世界是白天的，因此你不能被杀
 pvp-disabled: "&chhe! PvP已禁用。"
 command-blocked: "&c此命令在时间周期的这一部分被屏蔽。"
 teleport-blocked: "&c您不能在这部分时间循环中传送。"
+help-command: |-
+  &eUnknow command syntax
+
+  &e/nightpvp enable &6- &eForce the PvP to enable
+  &e/nightpvp disable &6- &eForce the PvP to disable
+forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
+forced-disable-command: "&8The PvP was forced to disable by %player_name%."
