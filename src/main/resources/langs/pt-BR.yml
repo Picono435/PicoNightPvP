@@ -15,7 +15,7 @@ teleport-blocked: "&cOpa, tu não pode ir a algum lugar nesta hora."
 help-command: |-
   &eUnknow command syntax
 
-  &e/nightpvp enable &6- &eForce the PvP to enable
-  &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+  &e/nightpvp enable &6- &eForce o PvP para habilitar
+  &e/nightpvp desabilitar &6- &eForça o PvP a desativar
+forced-enable-command: "&eO PvP foi forçado a ativar por %player_name%."
+forced-disable-command: "&8O PvP foi forçado a desativar por %player_name%."

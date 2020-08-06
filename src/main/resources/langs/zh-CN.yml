@@ -13,9 +13,9 @@ pvp-disabled: "&chhe! PvP已禁用。"
 command-blocked: "&c此命令在时间周期的这一部分被屏蔽。"
 teleport-blocked: "&c您不能在这部分时间循环中传送。"
 help-command: |-
-  &eUnknow command syntax
+  &eUnknown 命令语法
 
-  &e/nightpvp enable &6- &eForce the PvP to enable
-  &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+  &e/nightpvp 启用 &6- &eForce PvP 以启用
+  &e/nightpvp 禁用 &6- &eForce PvP 以禁用
+forced-enable-command: "&eThe PvP 被 %player_name% 强制启用。"
+forced-disable-command: "&8PvP被强制禁用 %player_name%。"

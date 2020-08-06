@@ -13,9 +13,9 @@ pvp-disabled: "&cHej! PvP jest wyłączone."
 command-blocked: "&cTa komenda jest zablokowana w tej części cyklu czasu."
 teleport-blocked: "&cNie możesz teleportować się w tej części cyklu czasu."
 help-command: |-
-  &eUnknow command syntax
+  &eSkładnia komend Unknow
 
-  &e/nightpvp enable &6- &eForce the PvP to enable
-  &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+  &e/nightpvp włącz &6- &eWymuś PvP aby włączyć
+  &e/nightpvp wyłącz &6- &eWymuś PvP aby wyłączyć
+forced-enable-command: "&ePvP został wymuszone do włączenia przez %player_name%."
+forced-disable-command: "&8PvP został wymuszony na %player_name%."
