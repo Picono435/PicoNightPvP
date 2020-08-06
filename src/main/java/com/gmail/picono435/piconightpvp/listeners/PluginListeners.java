@@ -40,13 +40,13 @@ public class PluginListeners implements Listener {
 		if(PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && !PicoNightPvPAPI.isNight()) {
 			Player p = (Player) e.getDamager();
 			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
-			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
+			p.sendMessage(LanguageManager.getMessage("pvp-disabled", p));
 			e.setCancelled(true);
 		}
 		if(!PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && PicoNightPvPAPI.isNight()) {
 			Player p = (Player) e.getDamager();
 			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
-			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
+			p.sendMessage(LanguageManager.getMessage("pvp-disabled", p));
 			e.setCancelled(true);
 		}
 	}
@@ -58,13 +58,13 @@ public class PluginListeners implements Listener {
 		if(PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && !PicoNightPvPAPI.isNight()) {
 			Player p = (Player) e.getEntity();
 			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
-			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
+			p.sendMessage(LanguageManager.getMessage("pvp-disabled", p));
 			e.setCancelled(true);
 		}
 		if(!PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night") && PicoNightPvPAPI.isNight()) {
 			Player p = (Player) e.getEntity();
 			if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(p.getWorld().getName())) return;
-			p.sendMessage(LanguageManager.getMessage("pvp-disabled"));
+			p.sendMessage(LanguageManager.getMessage("pvp-disabled", p));
 			e.setCancelled(true);
 		}
 	}

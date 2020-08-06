@@ -3,20 +3,40 @@ package com.gmail.picono435.piconightpvp.managers;
 import java.io.File;
 import java.io.IOException;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import com.gmail.picono435.piconightpvp.PicoNightPvPPlugin;
+
+import me.clip.placeholderapi.PlaceholderAPI;
 
 public class LanguageManager {
 	
 	private static FileConfiguration language;
 	private static File language_file;
     
-    public static String getMessage(String message) {
-    	return ChatColor.translateAlternateColorCodes('&', language.getString(message));
+	public static String getMessage(String message) {
+    	String chat = ChatColor.translateAlternateColorCodes('&', language.getString(message));
+    	
+    	if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+    		chat = PlaceholderAPI.setPlaceholders(null, chat);
+    	}
+    	
+    	return chat;
+    }
+	
+    public static String getMessage(String message, Player p) {
+    	String chat = ChatColor.translateAlternateColorCodes('&', language.getString(message));
+    	
+    	if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+    		chat = PlaceholderAPI.setPlaceholders(p, chat);
+    	}
+    	
+    	return chat;
     }
     
     public static void createLanguageFile() {

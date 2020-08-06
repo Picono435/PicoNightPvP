@@ -2,6 +2,7 @@ name: PicoNightPvP
 author: [Picono435]
 version: ${project.version}
 main: com.gmail.picono435.piconightpvp.PicoNightPvPPlugin
+softdepend: [PlaceholderAPI]
 api-version: 1.16
 commands:
   nightpvp:
