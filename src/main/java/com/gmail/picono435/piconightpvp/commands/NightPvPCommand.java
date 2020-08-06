@@ -32,6 +32,7 @@ public class NightPvPCommand implements CommandExecutor {
 			if(args[0].equals("enable")) {
 				if(PicoNightPvPAPI.canPvP()) {
 					sender.sendMessage(ChatColor.RED + "The PvP is already enabled.");
+					return true;
 				}
 				if(sender instanceof Player) {
 					Bukkit.broadcastMessage(LanguageManager.getMessage("forced-enable-command", (Player)sender));
@@ -45,6 +46,7 @@ public class NightPvPCommand implements CommandExecutor {
 			if(args[0].equals("disable")) {
 				if(!PicoNightPvPAPI.canPvP()) {
 					sender.sendMessage(ChatColor.RED + "The PvP is already disabled.");
+					return true;
 				}
 				if(sender instanceof Player) {
 					Bukkit.broadcastMessage(LanguageManager.getMessage("forced-disable-command", (Player)sender));
