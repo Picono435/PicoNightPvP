@@ -17,5 +17,5 @@ help-command: |-
 
   &e/nightpvp enable &6- &eForce the PvP to enable
   &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+forced-enable-command: "&ePvPは %player_name%によって強制的に有効化されました。"
+forced-disable-command: "&8PvPは %player_name%によって強制的に無効化されました。"
