@@ -17,5 +17,5 @@ help-command: |-
 
   &e/nightpvp activeaza &6- forteaza PvP sa activeze
   &e/nightpvp dezactiveaza &6- &eForteaza PvP sa dezactiveze
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+forced-enable-command: "&ePvP a fost fortat sa fie activat de %player_name%."
+forced-disable-command: "&8PvP a fost fortata sa fie dezactivat de %player_name%."
