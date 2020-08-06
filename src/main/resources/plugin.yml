@@ -3,3 +3,6 @@ author: [Picono435]
 version: ${project.version}
 main: com.gmail.picono435.piconightpvp.PicoNightPvPPlugin
 api-version: 1.16
+commands:
+  nightpvp:
+    aliases: [piconightpvp, pvpnight, nightpvptoggle]
