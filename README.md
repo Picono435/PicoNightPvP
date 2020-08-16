@@ -2,12 +2,14 @@
 [license]: https://github.com/Picono435/PicoNightPvP/blob/master/LICENSE
 [releaseImg]: https://img.shields.io/github/release/Picono435/PicoNightPvP.svg?label=github%20release
 [release]: https://github.com/Picono435/PicoNightPvP/releases/latest
+[crowdinImg]: https://badges.crowdin.net/e/d2aa55fbf5cd16aae491b225c638d8f4/localized.svg
+[crowdin]: https://crowdin.piconodev.tk
 
 [statistics]: https://bstats.org/plugin/bukkit/PicoNightPvP
 
 # PicoNightPvP
 
-[![releaseImg]][release] [![licenseImg]][license]
+[![releaseImg]][release] [![licenseImg]][license] [!crowdinImg]][crowdin]
 
 PicoNightPvP is a plugin that allow you to enable the pvp at night and disable the pvp at day in specific worlds. This plugin can be very good for plots worlds!
 
