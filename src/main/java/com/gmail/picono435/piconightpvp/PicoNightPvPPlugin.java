@@ -43,7 +43,6 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				PicoNightPvPAPI api = new PicoNightPvPAPI();
 				for(String worldname : getConfig().getStringList("pvp-worlds")) {
 					World world = Bukkit.getWorld(worldname);
 					if(world == null) {
@@ -51,14 +50,14 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 						return;
 					}
 					System.out.println(isCurrentlyNight(worldname));
-					System.out.println(api.isNight(world));
-					if(!isCurrentlyNight(worldname) && api.isNight(world)) {
-						api.setNight(false, world);
+					System.out.println(PicoNightPvPAPI.isNight(world));
+					if(!isCurrentlyNight(worldname) && PicoNightPvPAPI.isNight(world)) {
+						PicoNightPvPAPI.setNight(false, world);
 						TimeChangedWorldEvent event = new TimeChangedWorldEvent(world, world.getTime(), false);
 						Bukkit.getScheduler().runTask(getPlugin(), () -> Bukkit.getPluginManager().callEvent(event));
 					}
-					if(isCurrentlyNight(worldname) && !api.isNight(world)) {
-						api.setNight(true, world);
+					if(isCurrentlyNight(worldname) && !PicoNightPvPAPI.isNight(world)) {
+						PicoNightPvPAPI.setNight(true, world);
 						TimeChangedWorldEvent event = new TimeChangedWorldEvent(world, world.getTime(), true);
 						Bukkit.getScheduler().runTask(getPlugin(), () -> Bukkit.getPluginManager().callEvent(event));
 					}

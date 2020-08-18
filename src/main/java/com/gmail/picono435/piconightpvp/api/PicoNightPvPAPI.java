@@ -9,8 +9,8 @@ import com.gmail.picono435.piconightpvp.PicoNightPvPPlugin;
 
 public class PicoNightPvPAPI {
 	
-	private Map<World, Boolean> nightWorlds = new HashMap<World, Boolean>();
-	private Map<World, Integer> canPvPWorlds = new HashMap<World, Integer>();
+	private static Map<World, Boolean> nightWorlds = new HashMap<World, Boolean>();
+	private static Map<World, Integer> canPvPWorlds = new HashMap<World, Integer>();
 	
 	/**
 	 * Checks if it's night or not
@@ -18,9 +18,9 @@ public class PicoNightPvPAPI {
 	 * @return true if it's night false if not
 	 * @param world the world to execute this action
 	 */
-	public boolean isNight(World world) {
+	public static boolean isNight(World world) {
 		if(!nightWorlds.containsKey(world)) {
-			System.out.println("FIRST TRY");
+			System.out.println("NOT FOUND ;(");
 			return false;
 		}
 		return nightWorlds.get(world);
@@ -32,7 +32,7 @@ public class PicoNightPvPAPI {
 	 * @param newNight if it's night or not
 	 * @param world the world to execute this action
 	 */
-	public void setNight(boolean newNight, World world) {
+	public static void setNight(boolean newNight, World world) {
 		if(nightWorlds.containsKey(world)) {
 			nightWorlds.replace(world, newNight);
 			return;
@@ -47,7 +47,7 @@ public class PicoNightPvPAPI {
 	 * @param world the world to execute this action
 	 * 
 	 */
-	public boolean canPvP(World world) {
+	public static boolean canPvP(World world) {
 		int canPvP = 0;
 		if(canPvPWorlds.containsKey(world)) {
 			canPvP = canPvPWorlds.get(world);
@@ -69,7 +69,7 @@ public class PicoNightPvPAPI {
 	 * @param status the new status of canPvP
 	 * @param world the world to execute this action
 	 */
-	public void setCanPvP(int status, World world) {
+	public static void setCanPvP(int status, World world) {
 		if(canPvPWorlds.containsKey(world)) {
 			canPvPWorlds.replace(world, status);
 			return;

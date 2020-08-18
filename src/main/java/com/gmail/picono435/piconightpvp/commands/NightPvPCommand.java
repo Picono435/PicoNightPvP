@@ -1,6 +1,7 @@
 package com.gmail.picono435.piconightpvp.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,8 +10,6 @@ import org.bukkit.entity.Player;
 import com.gmail.picono435.piconightpvp.PicoNightPvPPlugin;
 import com.gmail.picono435.piconightpvp.api.PicoNightPvPAPI;
 import com.gmail.picono435.piconightpvp.managers.LanguageManager;
-
-import net.md_5.bungee.api.ChatColor;
 
 public class NightPvPCommand implements CommandExecutor {
 
@@ -30,24 +29,22 @@ public class NightPvPCommand implements CommandExecutor {
 				return true;
 			}
 			if(args[0].equals("enable")) {
-				PicoNightPvPAPI api = new PicoNightPvPAPI();
-				if(api.canPvP(p.getWorld())) {
+				if(PicoNightPvPAPI.canPvP(p.getWorld())) {
 					p.sendMessage(ChatColor.RED + "The PvP is already enabled.");
 					return true;
 				}
 				Bukkit.broadcastMessage(LanguageManager.getMessage("forced-enable-command", (Player)sender));
-				api.setCanPvP(1, p.getWorld());
+				PicoNightPvPAPI.setCanPvP(1, p.getWorld());
 				return true;
 			}
 			
 			if(args[0].equals("disable")) {
-				PicoNightPvPAPI api = new PicoNightPvPAPI();
-				if(!api.canPvP(p.getWorld())) {
+				if(!PicoNightPvPAPI.canPvP(p.getWorld())) {
 					p.sendMessage(ChatColor.RED + "The PvP is already disabled.");
 					return true;
 				}
 				Bukkit.broadcastMessage(LanguageManager.getMessage("forced-disable-command", (Player)sender));
-				api.setCanPvP(2, p.getWorld());
+				PicoNightPvPAPI.setCanPvP(2, p.getWorld());
 				return true;
 			}
 			
