@@ -49,8 +49,6 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 						sendConsoleMessage(ChatColor.DARK_RED + "[PicoNightPvP] We didn't find any world with the name: " + worldname + ".");
 						return;
 					}
-					System.out.println(isCurrentlyNight(worldname));
-					System.out.println(PicoNightPvPAPI.isNight(world));
 					if(!isCurrentlyNight(worldname) && PicoNightPvPAPI.isNight(world)) {
 						PicoNightPvPAPI.setNight(false, world);
 						TimeChangedWorldEvent event = new TimeChangedWorldEvent(world, world.getTime(), false);
