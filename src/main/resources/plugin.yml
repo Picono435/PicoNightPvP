@@ -4,6 +4,7 @@ version: ${project.version}
 main: com.gmail.picono435.piconightpvp.PicoNightPvPPlugin
 softdepend: [PlaceholderAPI]
 api-version: 1.16
+description: "This plugin allows you to enable the pvp only at night in specific worlds! Very good for use in plots worlds!"
 commands:
   nightpvp:
     aliases: [piconightpvp, pvpnight, nightpvptoggle]
