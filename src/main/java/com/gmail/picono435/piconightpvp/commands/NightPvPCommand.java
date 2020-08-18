@@ -21,47 +21,37 @@ public class NightPvPCommand implements CommandExecutor {
 				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&9PicoNightPvP&8]&f PicoNightPvP v" + PicoNightPvPPlugin.getPlugin().getDescription().getVersion() + ". (https://discord.gg/wQj53Hy)"));
 				return true;
 			}
+			if(!(sender instanceof Player)) {
+				return true;
+			}
+			Player p = (Player)sender;
 			if(args.length < 1) {
-				if(sender instanceof Player) {
-					sender.sendMessage(LanguageManager.getMessage("help-command", (Player)sender));
-				} else {
-					sender.sendMessage(LanguageManager.getMessage("help-command"));
-				}
+				p.sendMessage(LanguageManager.getMessage("help-command", (Player)sender));
 				return true;
 			}
 			if(args[0].equals("enable")) {
-				if(PicoNightPvPAPI.canPvP()) {
-					sender.sendMessage(ChatColor.RED + "The PvP is already enabled.");
+				PicoNightPvPAPI api = new PicoNightPvPAPI();
+				if(api.canPvP(p.getWorld())) {
+					p.sendMessage(ChatColor.RED + "The PvP is already enabled.");
 					return true;
 				}
-				if(sender instanceof Player) {
-					Bukkit.broadcastMessage(LanguageManager.getMessage("forced-enable-command", (Player)sender));
-				} else {
-					Bukkit.broadcastMessage(LanguageManager.getMessage("forced-enable-command"));
-				}
-				PicoNightPvPAPI.setCanPvP(1);
+				Bukkit.broadcastMessage(LanguageManager.getMessage("forced-enable-command", (Player)sender));
+				api.setCanPvP(1, p.getWorld());
 				return true;
 			}
 			
 			if(args[0].equals("disable")) {
-				if(!PicoNightPvPAPI.canPvP()) {
-					sender.sendMessage(ChatColor.RED + "The PvP is already disabled.");
+				PicoNightPvPAPI api = new PicoNightPvPAPI();
+				if(!api.canPvP(p.getWorld())) {
+					p.sendMessage(ChatColor.RED + "The PvP is already disabled.");
 					return true;
 				}
-				if(sender instanceof Player) {
-					Bukkit.broadcastMessage(LanguageManager.getMessage("forced-disable-command", (Player)sender));
-				} else {
-					Bukkit.broadcastMessage(LanguageManager.getMessage("forced-disable-command"));
-				}
-				PicoNightPvPAPI.setCanPvP(2);
+				Bukkit.broadcastMessage(LanguageManager.getMessage("forced-disable-command", (Player)sender));
+				api.setCanPvP(2, p.getWorld());
 				return true;
 			}
 			
-			if(sender instanceof Player) {
-				sender.sendMessage(LanguageManager.getMessage("help-command", (Player)sender));
-			} else {
-				sender.sendMessage(LanguageManager.getMessage("help-command"));
-			}
+			p.sendMessage(LanguageManager.getMessage("help-command", (Player)sender));
 			return true;
 		}
 		return false;

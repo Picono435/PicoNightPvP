@@ -24,7 +24,8 @@ public class PluginListeners implements Listener {
 			w = e.getWorld().getName();
 		}
 		if(!w.equals(e.getWorld().getName())) return;
-		PicoNightPvPAPI.setCanPvP(0);
+		PicoNightPvPAPI api = new PicoNightPvPAPI();
+		api.setCanPvP(0, e.getWorld());
 		if(e.isNight()) {
 			Bukkit.broadcastMessage(LanguageManager.getMessage("became-night"));
 			return;
@@ -39,7 +40,8 @@ public class PluginListeners implements Listener {
 		if(!(e.getEntity() instanceof Player)) return;
 		if(!(e.getDamager() instanceof Player)) return;
 		if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(e.getEntity().getWorld().getName())) return;
-		if(!PicoNightPvPAPI.canPvP()) {
+		PicoNightPvPAPI api = new PicoNightPvPAPI();
+		if(!api.canPvP(e.getDamager().getWorld())) {
 			Player p = (Player) e.getDamager();
 			p.sendMessage(LanguageManager.getMessage("pvp-disabled", p));
 			e.setCancelled(true);
@@ -51,7 +53,8 @@ public class PluginListeners implements Listener {
 		if(!(e.getEntity() instanceof Player)) return;
 		if(e.getCause() == DamageCause.ENTITY_ATTACK) return;
 		if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(e.getEntity().getWorld().getName())) return;
-		if(!PicoNightPvPAPI.canPvP()) {
+		PicoNightPvPAPI api = new PicoNightPvPAPI();
+		if(!api.canPvP(e.getEntity().getWorld())) {
 			Player p = (Player) e.getEntity();
 			p.sendMessage(LanguageManager.getMessage("pvp-disabled", p));
 			e.setCancelled(true);

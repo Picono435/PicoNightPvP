@@ -9,6 +9,7 @@ import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -42,15 +43,21 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
+				PicoNightPvPAPI api = new PicoNightPvPAPI();
 				for(String worldname : getConfig().getStringList("pvp-worlds")) {
-					if(isDay(worldname) && PicoNightPvPAPI.isNight()) {
-						PicoNightPvPAPI.setNight(false);
-						TimeChangedWorldEvent event = new TimeChangedWorldEvent(PicoNightPvPPlugin.getPlugin().getServer().getWorld(worldname), PicoNightPvPPlugin.getPlugin().getServer().getWorld(worldname).getTime(), false);
+					World world = Bukkit.getWorld(worldname);
+					if(world == null) {
+						sendConsoleMessage(ChatColor.DARK_RED + "[PicoNightPvP] We didn't find any world with the name: " + worldname + ".");
+						return;
+					}
+					if(isDay(worldname) && api.isNight(world)) {
+						api.setNight(false, world);
+						TimeChangedWorldEvent event = new TimeChangedWorldEvent(world, world.getTime(), false);
 						Bukkit.getScheduler().runTask(getPlugin(), () -> Bukkit.getPluginManager().callEvent(event));
 					}
-					if(!isDay(worldname) && !PicoNightPvPAPI.isNight()) {
-						PicoNightPvPAPI.setNight(true);
-						TimeChangedWorldEvent event = new TimeChangedWorldEvent(PicoNightPvPPlugin.getPlugin().getServer().getWorld(worldname), PicoNightPvPPlugin.getPlugin().getServer().getWorld(worldname).getTime(), true);
+					if(!isDay(worldname) && !api.isNight(world)) {
+						api.setNight(true, world);
+						TimeChangedWorldEvent event = new TimeChangedWorldEvent(world, world.getTime(), true);
 						Bukkit.getScheduler().runTask(getPlugin(), () -> Bukkit.getPluginManager().callEvent(event));
 					}
 				}
@@ -70,10 +77,6 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 	}
 	
 	private static boolean isDay(String worldname) {
-		if(Bukkit.getServer().getWorld(worldname) == null) {
-			sendConsoleMessage(ChatColor.DARK_RED + "[PicoNightPvP] We didn't find any world with the name: " + worldname + " so we will say that it's day!");
-			return true;
-		}
 		long time = PicoNightPvPPlugin.getPlugin().getServer().getWorld(worldname).getTime();
 		
 		if(time > 0 && time < 12300) {
