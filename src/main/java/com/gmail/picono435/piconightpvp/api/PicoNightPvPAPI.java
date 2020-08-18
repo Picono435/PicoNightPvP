@@ -19,6 +19,9 @@ public class PicoNightPvPAPI {
 	 * @param world the world to execute this action
 	 */
 	public boolean isNight(World world) {
+		if(!nightWorlds.containsKey(world)) {
+			return false;
+		}
 		return nightWorlds.get(world);
 	}
 	
@@ -30,7 +33,8 @@ public class PicoNightPvPAPI {
 	 */
 	public void setNight(boolean newNight, World world) {
 		if(nightWorlds.containsKey(world)) {
-			nightWorlds.remove(world);
+			nightWorlds.replace(world, newNight);
+			return;
 		}
 		nightWorlds.put(world, newNight);
 	}
@@ -43,8 +47,14 @@ public class PicoNightPvPAPI {
 	 * 
 	 */
 	public boolean canPvP(World world) {
-		int canPvP = canPvPWorlds.get(world);
-		boolean isNight = nightWorlds.get(world);
+		int canPvP = 0;
+		if(canPvPWorlds.containsKey(world)) {
+			canPvP = canPvPWorlds.get(world);
+		}
+		boolean isNight = false;
+		if(nightWorlds.containsKey(world)) {
+			isNight = nightWorlds.get(world);
+		}
 		if(canPvP == 0) {
 			return isNight != PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("block-pvp-night");
 		} else {
@@ -60,7 +70,8 @@ public class PicoNightPvPAPI {
 	 */
 	public void setCanPvP(int status, World world) {
 		if(canPvPWorlds.containsKey(world)) {
-			canPvPWorlds.remove(world);
+			canPvPWorlds.replace(world, status);
+			return;
 		}
 		canPvPWorlds.put(world, status);
 	}
