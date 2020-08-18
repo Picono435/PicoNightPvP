@@ -50,12 +50,14 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 						sendConsoleMessage(ChatColor.DARK_RED + "[PicoNightPvP] We didn't find any world with the name: " + worldname + ".");
 						return;
 					}
-					if(isDay(worldname) && api.isNight(world)) {
+					System.out.println(isCurrentlyNight(worldname));
+					System.out.println(api.isNight(world));
+					if(!isCurrentlyNight(worldname) && api.isNight(world)) {
 						api.setNight(false, world);
 						TimeChangedWorldEvent event = new TimeChangedWorldEvent(world, world.getTime(), false);
 						Bukkit.getScheduler().runTask(getPlugin(), () -> Bukkit.getPluginManager().callEvent(event));
 					}
-					if(!isDay(worldname) && !api.isNight(world)) {
+					if(isCurrentlyNight(worldname) && !api.isNight(world)) {
 						api.setNight(true, world);
 						TimeChangedWorldEvent event = new TimeChangedWorldEvent(world, world.getTime(), true);
 						Bukkit.getScheduler().runTask(getPlugin(), () -> Bukkit.getPluginManager().callEvent(event));
@@ -76,13 +78,13 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		sendConsoleMessage(ChatColor.GREEN + "[PicoNightPvP] The plugin was succefully disabled.");
 	}
 	
-	private static boolean isDay(String worldname) {
+	private static boolean isCurrentlyNight(String worldname) {
 		long time = PicoNightPvPPlugin.getPlugin().getServer().getWorld(worldname).getTime();
 		
 		if(time > 0 && time < 12300) {
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 	

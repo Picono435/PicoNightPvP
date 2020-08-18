@@ -13,7 +13,7 @@
   </properties>
   
    <build>
-      <finalName>PicoJobs-FREE-${project.version}</finalName>
+      <finalName>PicoNightPvP-FREE-${project.version}</finalName>
       <sourceDirectory>src/main/java</sourceDirectory>
       <resources>
          <resource>
