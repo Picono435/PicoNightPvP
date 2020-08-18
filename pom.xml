@@ -12,7 +12,8 @@
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   
-<build>
+   <build>
+      <finalName>PicoJobs-FREE-${project.version}</finalName>
       <sourceDirectory>src/main/java</sourceDirectory>
       <resources>
          <resource>
@@ -25,6 +26,14 @@
 	        <groupId>org.apache.maven.plugins</groupId>
 	        <artifactId>maven-shade-plugin</artifactId>
 	        <version>3.2.4</version>
+	        <configuration>
+		        <relocations>
+		          <relocation>
+		            <pattern>org.bstats</pattern>
+		            <shadedPattern>com.gmail.picono435.picojobs</shadedPattern>
+		          </relocation>
+		        </relocations>
+            </configuration>
 	        <executions>
 	          <execution>
 	            <phase>package</phase>
@@ -34,6 +43,23 @@
 	          </execution>
 	        </executions>
 	      </plugin>
+	      <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<show>public</show>
+					<windowtitle>PicoJobs</windowtitle>
+					<verbose>false</verbose>
+					<author>true</author>
+					<version>true</version>
+					<linksource>true</linksource>
+					<notimestamp>true</notimestamp>
+					<bottom><![CDATA[<b>PiconoDev, 2020</b>]]></bottom>
+					<reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
+					<destDir>javadoc-latest</destDir>
+				</configuration>
+			</plugin>
       </plugins>
    </build>
   
@@ -52,6 +78,11 @@
   	<repository>
         <id>placeholderapi</id>
         <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+  	</repository>
+  	
+  	<repository>
+  	  	<id>CodeMC</id>
+  	  	<url>https://repo.codemc.org/repository/maven-public</url>
   	</repository>
   </repositories>
   
@@ -80,6 +111,13 @@
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-artifact</artifactId>
             <version>3.0.3</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.bstats</groupId>
+        <artifactId>bstats-bukkit</artifactId>
+        <version>1.7</version>
+        <scope>compile</scope>
     </dependency>
   </dependencies>
   

@@ -18,7 +18,7 @@ public class NightPvPCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(cmd.getName().equals("nightpvp")) {
 			if(!sender.hasPermission("piconightpvp.toggle")) {
-				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&9PicoNightPvP&8]&f PicoNightPvP v" + PicoNightPvPPlugin.getPlugin().getDescription().getVersion() + "."));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&9PicoNightPvP&8]&f PicoNightPvP v" + PicoNightPvPPlugin.getPlugin().getDescription().getVersion() + ". (https://discord.gg/wQj53Hy)"));
 				return true;
 			}
 			if(args.length < 1) {

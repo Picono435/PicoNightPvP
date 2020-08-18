@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
@@ -19,7 +20,6 @@ import com.gmail.picono435.piconightpvp.commands.NightPvPCommand;
 import com.gmail.picono435.piconightpvp.events.TimeChangedWorldEvent;
 import com.gmail.picono435.piconightpvp.listeners.PluginListeners;
 import com.gmail.picono435.piconightpvp.managers.LanguageManager;
-import com.gmail.picono435.piconightpvp.utils.Metrics;
 
 public class PicoNightPvPPlugin extends JavaPlugin {
 	
