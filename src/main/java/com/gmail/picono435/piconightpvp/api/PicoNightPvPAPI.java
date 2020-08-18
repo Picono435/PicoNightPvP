@@ -16,6 +16,7 @@ public class PicoNightPvPAPI {
 	 * Checks if it's night or not
 	 * 
 	 * @return true if it's night false if not
+	 * @param world the world to execute this action
 	 */
 	public boolean isNight(World world) {
 		return nightWorlds.get(world);
@@ -24,7 +25,8 @@ public class PicoNightPvPAPI {
 	/**
 	 * Sets if it's night or not
 	 * 
-	 * @return true if it's night false if not
+	 * @param newNight if it's night or not
+	 * @param world the world to execute this action
 	 */
 	public void setNight(boolean newNight, World world) {
 		if(nightWorlds.containsKey(world)) {
@@ -33,6 +35,13 @@ public class PicoNightPvPAPI {
 		nightWorlds.put(world, newNight);
 	}
 	
+	/**
+	 * Checks if PvP is allowed or not
+	 * 
+	 * @return true if you can pvp, false if not
+	 * @param world the world to execute this action
+	 * 
+	 */
 	public boolean canPvP(World world) {
 		int canPvP = canPvPWorlds.get(world);
 		boolean isNight = nightWorlds.get(world);
@@ -43,6 +52,12 @@ public class PicoNightPvPAPI {
 		}
 	}
 	
+	/**
+	 * Sets if you can or cannot pvp
+	 * 
+	 * @param status the new status of canPvP
+	 * @param world the world to execute this action
+	 */
 	public void setCanPvP(int status, World world) {
 		if(canPvPWorlds.containsKey(world)) {
 			canPvPWorlds.remove(world);
