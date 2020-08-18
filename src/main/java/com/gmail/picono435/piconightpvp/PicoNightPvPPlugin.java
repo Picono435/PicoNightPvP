@@ -93,6 +93,10 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		PicoNightPvPPlugin.getPlugin().getServer().getConsoleSender().sendMessage(message);
 	}
 	
+	public static boolean isPremium() {
+		return false;
+	}
+	
 	private boolean verificarLicenca() {
 		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] You are using the FREE version of the plugin!");
 		sendConsoleMessage(ChatColor.YELLOW + "[PicoNightPvP] Want to buy the premium version? Buy it in our site.");
