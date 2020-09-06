@@ -33,6 +33,12 @@ public class PicoNightPvPPlugin extends JavaPlugin {
 		if(!verificarLicenca()) return;
 		sendConsoleMessage(ChatColor.AQUA + "[PicoNightPvP] Creating and configurating the language file selected...");
 		LanguageManager.createLanguageFile();
+		if(!getConfig().contains("config-version") || !getConfig().getString("config-version").equalsIgnoreCase(getDescription().getVersion())) {
+			sendConsoleMessage(ChatColor.YELLOW + "You were using a old configuration file... Updating it and removing comments, for more information check our WIKI.");
+			getConfig().options().copyDefaults(true);
+			getConfig().set("config-version", getDescription().getVersion());
+			saveConfig();
+		}
 		
 		int pluginId = 8043;
         Metrics metrics = new Metrics(this, pluginId);

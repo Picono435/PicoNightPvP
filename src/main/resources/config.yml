@@ -8,6 +8,8 @@
 # Some configurations have the ** PREMIUM ONLY ** tag, this means that the configurations are only for the premium version.
 # Buy the premium version of the plugin in: https://www.piconodev.tk/plugins/premium
 
+# DO NOT CHANGE THIS
+config-version: ${project.version}
 
 #################################################################################
 #                                                                               #
