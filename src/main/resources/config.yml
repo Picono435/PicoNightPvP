@@ -30,6 +30,8 @@ pvp-worlds:
   - "world"
 # If the pvp should be blocked at day or night
 block-pvp-night: false
+# If you allow people will not receive any damage when PvP is disabled
+allow-damage: false
 # Commands that will get blocked when is night ** PREMIUM ONLY **
 block-commands-night:
   - "fly"

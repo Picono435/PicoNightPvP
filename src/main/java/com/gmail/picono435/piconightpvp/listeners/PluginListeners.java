@@ -48,6 +48,7 @@ public class PluginListeners implements Listener {
 	
 	@EventHandler()
 	public void onTryDamage(EntityDamageEvent e) {
+		if(!PicoNightPvPPlugin.getPlugin().getConfig().getBoolean("allow-damage")) return;
 		if(!(e.getEntity() instanceof Player)) return;
 		if(e.getCause() == DamageCause.ENTITY_ATTACK) return;
 		if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(e.getEntity().getWorld().getName())) return;
