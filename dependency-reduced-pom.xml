@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gmail.picono435</groupId>
   <artifactId>piconightpvp</artifactId>
-  <version>1.2.2</version>
+  <version>1.2.2.1</version>
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
     <resources>

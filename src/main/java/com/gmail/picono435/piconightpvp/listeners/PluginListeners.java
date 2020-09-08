@@ -1,12 +1,14 @@
 package com.gmail.picono435.piconightpvp.listeners;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+import org.bukkit.event.entity.EntityPotionEffectEvent.Cause;
 
 import com.gmail.picono435.piconightpvp.PicoNightPvPPlugin;
 import com.gmail.picono435.piconightpvp.api.PicoNightPvPAPI;
@@ -37,10 +39,19 @@ public class PluginListeners implements Listener {
 	@EventHandler()
 	public void onTryKill(EntityDamageByEntityEvent e) {
 		if(!(e.getEntity() instanceof Player)) return;
-		if(!(e.getDamager() instanceof Player)) return;
 		if(!PicoNightPvPPlugin.getPlugin().getConfig().getStringList("pvp-worlds").contains(e.getEntity().getWorld().getName())) return;
 		if(!PicoNightPvPAPI.canPvP(e.getDamager().getWorld())) {
-			Player p = (Player) e.getDamager();
+			if(e.getDamager() instanceof Arrow) {
+				Arrow arrow = (Arrow)e.getDamager();
+				if(!(arrow.getShooter() instanceof Player)) return;
+			}
+			Player p;
+			if(e.getDamager() instanceof Player) {
+				p = (Player) e.getDamager();
+			} else {
+				Arrow arrow = (Arrow)e.getDamager();
+				p = (Player)arrow.getShooter();
+			}
 			p.sendMessage(LanguageManager.getMessage("pvp-disabled", p));
 			e.setCancelled(true);
 		}

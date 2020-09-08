@@ -20,7 +20,6 @@ public class PicoNightPvPAPI {
 	 */
 	public static boolean isNight(World world) {
 		if(!nightWorlds.containsKey(world)) {
-			System.out.println("NOT FOUND ;(");
 			return false;
 		}
 		return nightWorlds.get(world);
