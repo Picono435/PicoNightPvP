@@ -7,15 +7,15 @@
 ##
 #################################################################################
 #In this category you can change the general messages of the plugin
-became-night: "&8Careful! Now the plots world is at night so you can get killed!"
-became-day: "&eYupii! Now the plots world is at day so you can't get killed!"
-pvp-disabled: "&cHey! The PvP is disabled."
-command-blocked: "&cThis command is blocked in this part of the time cycle."
+became-night: "&8Προσοχή! Τώρα ο κόσμος οικόπεδα είναι τη νύχτα ώστε να μπορείτε να σκοτώσετε!"
+became-day: "&Yupii! Τώρα ο κόσμος των οικόπεδων είναι την ημέρα και δεν μπορείτε να σκοτώσετε!"
+pvp-disabled: "&Γεια! Το PvP είναι απενεργοποιημένο."
+command-blocked: "&cΑυτή η εντολή έχει αποκλειστεί σε αυτό το μέρος του κύκλου χρόνου."
 teleport-blocked: "&cYou cannot teleport in this part of the time cycle."
 help-command: |-
   &eUnknow command syntax
 
   &e/nightpvp enable &6- &eForce the PvP to enable
   &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+forced-enable-command: "&Το PvP αναγκάστηκε να ενεργοποιηθεί από %player_name%."
+forced-disable-command: "&8Το PvP αναγκάστηκε να απενεργοποιηθεί από %player_name%."
