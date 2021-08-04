@@ -7,15 +7,15 @@
 ##
 #################################################################################
 #In this category you can change the general messages of the plugin
-became-night: "&8Careful! Now the plots world is at night so you can get killed!"
-became-day: "&eYupii! Now the plots world is at day so you can't get killed!"
-pvp-disabled: "&cHey! The PvP is disabled."
-command-blocked: "&cThis command is blocked in this part of the time cycle."
-teleport-blocked: "&cYou cannot teleport in this part of the time cycle."
+became-night: "&8Huolellinen! Nyt tonttien maailma on yöllä, joten voit tapettu!"
+became-day: "&eYupii! Nyt tonttien maailma on päivällä, joten et voi tappaa!"
+pvp-disabled: "&cHei! PvP on poistettu käytöstä."
+command-blocked: "&cTämä komento on estetty tässä aikajakson osassa."
+teleport-blocked: "&cEt voi teleportata tässä aikajakson osassa."
 help-command: |-
-  &eUnknow command syntax
+  &eUnknow komennon syntaksi
 
-  &e/nightpvp enable &6- &eForce the PvP to enable
-  &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+  &e/nightpvp ota &6- &eForce PvP käyttöön ottaaksesi
+  &e/nightpvp pois käytöstä &6- &ePakota PvP poistaaksesi käytöstä
+forced-enable-command: "&eThe PvP pakotettiin ottamaan käyttöön %player_name%."
+forced-disable-command: "&8PvP pakotettiin poistamaan käytöstä %player_name% toimesta."
