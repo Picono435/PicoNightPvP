@@ -7,15 +7,15 @@
 ##
 #################################################################################
 #In this category you can change the general messages of the plugin
-became-night: "&8Vorsicht! Jetzt ist die Welt der Grundstücke in der Nacht, damit du getötet werden kannst!"
-became-day: "&8Vorsicht! Jetzt ist die Welt der Grundstücke in der Nacht, damit du getötet werden kannst!"
+became-night: "&8Achtung! In der Plot-Welt wurde es Nacht, also kannst du getötet werden!"
+became-day: "&8Juhu! Du kannst nicht mehr getötet werden; die Nacht in der Plot-Welt ist vorüber."
 pvp-disabled: "&cHey! Der PvP ist deaktiviert."
-command-blocked: "&cDieser Befehl ist in diesem Teil des Zeitzyklus blockiert."
-teleport-blocked: "&cDu kannst dich in diesem Teil des Zeitzyklus nicht teleportieren."
+command-blocked: "&cZur aktuellen Uhrzeit kannst du diesen Befehl nicht ausführen."
+teleport-blocked: "&cDie momentanige Uhrzeit lässt Teleportationen nicht zu."
 help-command: |-
-  &eUnknow command syntax
+  &eUnbekannte Befehlssyntax
 
-  &e/nightpvp enable &6- &eForce the PvP to enable
-  &e/nightpvp disable &6- &eForce the PvP to disable
-forced-enable-command: "&eThe PvP was forced to enable by %player_name%."
-forced-disable-command: "&8The PvP was forced to disable by %player_name%."
+  &e/nightpvp enable &6- &eErzwingt die PvP-Aktivierung.
+  &e/nightpvp disable &6- &eErzwingt die PvP-Deaktivierung.
+forced-enable-command: "&8Die Aktivierung des PvP wurde durch %player_name% erzwungen."
+forced-disable-command: "&8Die Deaktivierung des PvP wurde durch %player_name% erzwungen."
